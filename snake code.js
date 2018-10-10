@@ -105,8 +105,8 @@ class Player {
 }
 
 class AvoidWallsPlayer extends Player {
-  constructor(){
-    super();
+  constructor(snakeCont){
+    super(snakeCont);
   }
   makeTurn(){
     if((this.sc_.snakeDir === "left") && (this.sc_.snakePos.x === 0)) {
@@ -114,9 +114,4 @@ class AvoidWallsPlayer extends Player {
     }
   }
 }
-
-let solidSnake = new Snake();
-let helloWorld = new World(solidSnake);
-let nesController = new SnakeController(helloWorld, solidSnake);
-let player1 = new AvoidWallsPlayer(nesController);
 
